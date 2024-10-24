@@ -1,0 +1,34 @@
+data:
+  evfile : /Volumes/Seagate/Magnetar_Project/Swift_J1822.3-1606/1-10GeV/list.txt
+  scfile : /Volumes/Seagate/Magnetar_Project/spacecraft/L240802173402FBCCA76195_SC00.fits
+  ltcube : /Volumes/Seagate/Magnetar_Project/ltcube_00.fits
+
+binning:
+  roiwidth   : 10
+  binsz      : 0.1
+  binsperdec : 8
+
+selection :
+  emin : 1000.0
+  emax : 10000.0
+  zmax    : 105
+  evclass : 128
+  evtype  : 3
+  ra: 275.57
+  dec:  -16.07
+  tmin: 239557417
+  tmax: 738892801
+
+gtlike:
+  edisp : True
+  irfs : 'P8R3_SOURCE_V3'
+  edisp_disable : ['isodiff']
+  edisp_bins : -2
+
+model:
+  src_roiwidth : 12
+  galdiff  : '/Volumes/Seagate/Magnetar_Project/Diffuse/gll_iem_v07.fits'
+  isodiff  : '/Volumes/Seagate/Magnetar_Project/Diffuse/iso_P8R3_SOURCE_V3_v1.txt'
+  catalogs : ['4FGL-DR3']
+  sources  :
+    - { name: 'Swift_J1822.3-1606', ra : 275.57, dec :  -16.07, SpectrumType : 'PowerLaw', SpatialModel: 'PointSource' }
