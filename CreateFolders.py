@@ -8,32 +8,46 @@ energybins = np.genfromtxt("energybins.csv", delimiter=",", dtype=None, encoding
 
 print(sourcelist[0],energybins)
 
-path = '/Volumes/Seagate/Magnetar_Automated_Pipeline/'
+mainpipeline = '/Volumes/Seagate/Magnetar_Automated_Pipeline/'
 
 # Create Source Folders #
 for s in sourcelist[0]:
     print(s)
-    new_src_folder = path + s
+    new_src_folder = mainpipeline + s
     os.system('mkdir %s'%new_src_folder)
+
+    # Create list.txt Files #
+    list_creation_directory = f"{mainpipeline}{s}/"
+    filename = "list.txt"
+    list_txt_path = os.path.join(list_creation_directory, filename)
+    
+    photon_folder_directory = f"/Volumes/Seagate/Magnetar_Project/{s}/0p1-300GeV/Photons"
+    fits_file_names = os.listdir(photon_folder_directory)
+
+    with open(list_txt_path, 'w') as file:
+        for name in fits_file_names:
+            list_path = os.path.join(photon_folder_directory, name)
+            if name.endswith(".fits") and not name.startswith("._"):
+                file.write(list_path + '\n')
 
     # Create Energy Bin Folders #
     for t in energybins[2]:
         print(t)
-        bin_folder = os.path.join(new_src_folder, t)
-        os.system('mkdir %s'%bin_folder)
+        new_bin_folders = os.path.join(new_src_folder, t)
+        os.system('mkdir %s'%new_bin_folders)
 
         # Add Decoy config.yaml File #
         config_source = "config.yaml"
-        destination_directory = bin_folder
-        shutil.copy(config_source, destination_directory)
+        config_directory = new_bin_folders
+        shutil.copy(config_source, config_directory)
 
         # Edit config.yaml Files #
-        config_file_path = os.path.join(bin_folder, 'config.yaml')
+        config_file_path = os.path.join(new_bin_folders, 'config.yaml')
         with open(config_file_path, 'r') as read_file:
             contents = yaml.safe_load(read_file)
         
         # data: #
-        contents["data"]["evfile"] = f"/Volumes/Seagate/Magnetar_Project/{s}/{t}/list.txt"
+        contents["data"]["evfile"] = f"/autobreaux/Magnetar_LAT/{s}/list.txt"
 
         # selection: #
         ## emin, emax, zmax ##
