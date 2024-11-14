@@ -29,14 +29,16 @@ dec0 = gta.config['selection']['dec']
 print('--- Printing Target ra, dec:', ra0, dec0, ' ---')
 
 #ALL SOURCES FREE
+print('--- Freeing Sources ---')
 gta.free_sources(free=False) 
 gta.free_source('isodiff', free=True)
 gta.free_source('galdiff', free=True)
-gta.free_source(gta.roi.sources[0].name, free=True)
+gta.free_source(gta.roi.sources[0].name, pars='norm')
 gta.free_sources(distance=3.0, pars='norm')
-gta.free_sources(pars='norm', minmax_ts=[16, None], free=True)
+gta.free_sources(pars='norm', minmax_ts=[16, None], free=True, exclude=[gta.roi.sources[0].name])
+gta.print_model()
 
-#This run a fast fit to the ROI	
+#This runs a fast fit to the ROI	
 print('--- Optimizing ---')
 gta.optimize()
 gta.print_model()
@@ -53,9 +55,6 @@ else:
 	gta.delete_source(gta.roi.sources[t-cont]['name'])
 	cont = cont + 1
 
-#Freeing sources within set distance of main source
-print('--- Freeing Sources ---')
-gta.free_sources(distance=3.0, pars='norm')
 gta.print_model()
 
 #IF YOU HAVE TO ADD A SOURCE DO:
@@ -77,7 +76,14 @@ gta.print_model()
 print('--- Finding New Sources with TS > 9 ---')
 model = {'Index' : 2.0, 'SpatialModel' : 'PointSource'}
 sdict = gta.find_sources(model=model, sqrt_ts_threshold=3.0, min_separation=0.5) # tsmap_fitter='tsmap'
-gta.free_sources(free=True)
+
+#Free Sources Again
+gta.free_sources(free=False)
+gta.free_source('isodiff', free=True)
+gta.free_source('galdiff', free=True)
+gta.free_source(gta.roi.sources[0].name, pars='norm')
+gta.free_sources(distance=3.0, pars='norm')
+gta.free_sources(pars='norm', minmax_ts=[9, None], free=True, exclude=[gta.roi.sources[0].name])
 gta.print_model()
 
 #Optimizing again

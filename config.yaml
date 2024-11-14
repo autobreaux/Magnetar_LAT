@@ -1,7 +1,7 @@
 data:
   evfile : /Volumes/Seagate/Magnetar_Project/Swift_J1822.3-1606/1-10GeV/list.txt
   scfile : /Volumes/Seagate/Magnetar_Project/spacecraft/ft2.fits
-  ltcube : /Volumes/Seagate/Magnetar_Project/ltcube_00.fits
+  ltcube : /Volumes/Seagate/Magnetar_Project/ltcube/ltcube_00.fits
 
 binning:
   roiwidth   : 10
@@ -31,4 +31,4 @@ model:
   isodiff  : '/Volumes/Seagate/Magnetar_Project/Diffuse/iso_P8R3_SOURCE_V3_v1.txt'
   catalogs : ['4FGL-DR3']
   sources  :
-    - { name: 'Swift_J1822.3-1606', ra : 275.57, dec :  -16.07, SpectrumType : 'PowerLaw', SpatialModel: 'PointSource' }
+    - { name: 'Swift_J1822.3-1606', ra : 275.57, dec :  -16.07, Index: 2.0, SpectrumType : 'PowerLaw', SpatialModel: 'PointSource' }
