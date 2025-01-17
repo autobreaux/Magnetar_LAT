@@ -7,7 +7,7 @@ energybins = np.genfromtxt("energybins.csv", delimiter=",", dtype=None, encoding
 mainpipeline = '/Volumes/Seagate/Magnetar_Automated_Pipeline/'
 
 # Enter Source Folders #
-for s in sourcelist[0]:
+for s in sourcelist[0][8:]:
     print(s)
     new_src_folder = mainpipeline + s
     os.chdir(new_src_folder)

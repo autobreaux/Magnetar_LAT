@@ -78,6 +78,7 @@ for i, s in enumerate(sourcelist[0]):
             contents["selection"]["emin"] = float(1000)
             contents["selection"]["emax"] = float(10000)
             contents["selection"]["zmax"] = float(105)
+            contents["model"]["sources"] = []
             contents["model"]["sources"].append({
                 "name": str(s),
                 "ra": float(sourcelist[1][i]),
@@ -90,6 +91,7 @@ for i, s in enumerate(sourcelist[0]):
             contents["selection"]["emin"] = float(100)
             contents["selection"]["emax"] = float(10000)
             contents["selection"]["zmax"] = float(90)
+            contents["model"]["sources"] = []
             contents["model"]["sources"].append({
                 "name": str(s),
                 "ra": float(sourcelist[1][i]),
@@ -102,6 +104,7 @@ for i, s in enumerate(sourcelist[0]):
             contents["selection"]["emin"] = float(100)
             contents["selection"]["emax"] = float(300000)
             contents["selection"]["zmax"] = float(90)
+            contents["model"]["sources"] = []
             contents["model"]["sources"].append({
                 "name": str(s),
                 "ra": float(sourcelist[1][i]),
