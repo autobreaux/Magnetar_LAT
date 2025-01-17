@@ -4,9 +4,9 @@ data:
   ltcube : /Volumes/Seagate/Magnetar_Project/ltcube/ltcube_00.fits
 
 binning:
-  roiwidth   : 10
+  roiwidth   : 14.1
   binsz      : 0.1
-  binsperdec : 8
+  binsperdec : 10
 
 selection :
   emin : 1000.0
