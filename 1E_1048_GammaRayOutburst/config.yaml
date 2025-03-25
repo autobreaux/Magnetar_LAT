@@ -1,0 +1,33 @@
+data:
+  evfile : /Users/autobreaux/1E_1048_GammaRayOutburst/list.txt
+  scfile : /Users/autobreaux/1E_1048_GammaRayOutburst/spacecraft/L241221204115FBCCA76139_SC00.fits
+
+binning:
+  roiwidth   : 15
+  binsz      : 0.1
+  binsperdec : 8
+
+selection :
+  emin : 100.0
+  emax : 300000.0
+  zmax    : 90
+  evclass : 128
+  evtype  : 3
+  ra: 162.53
+  dec:  -59.89
+  tmin: 345686402
+  tmax: 348278402
+
+gtlike:
+  edisp : True
+  irfs : 'P8R3_SOURCE_V3'
+  edisp_disable : ['isodiff']
+  edisp_bins : -2
+
+model:
+  src_roiwidth : 25
+  galdiff  : '/Volumes/Seagate/Magnetar_Project/Diffuse/gll_iem_v07.fits'
+  isodiff  : '/Volumes/Seagate/Magnetar_Project/Diffuse/iso_P8R3_SOURCE_V3_v1.txt'
+  catalogs : ['4FGL-DR3']
+  sources  :
+    - { name: '1E 1048.1-5937', ra : 162.53, dec :  -59.89, Index: 2.0, SpectrumType : 'PowerLaw', SpatialModel: 'PointSource' }

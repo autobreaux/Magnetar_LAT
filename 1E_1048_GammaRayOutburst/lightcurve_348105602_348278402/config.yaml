@@ -1,0 +1,274 @@
+binning:
+  binsperdec: 8.0
+  binsz: 0.1
+  coordsys: CEL
+  enumbins: null
+  hpx_ebin: true
+  hpx_order: 10
+  hpx_ordering_scheme: RING
+  npix: null
+  proj: AIT
+  projtype: WCS
+  roiwidth: 15.0
+components:
+- data:
+    evfile: /Users/autobreaux/1E_1048_GammaRayOutburst/ft1_00.fits
+    ltcube: null
+    scfile: /Users/autobreaux/1E_1048_GammaRayOutburst/spacecraft/L241221204115FBCCA76139_SC00.fits
+  gtlike: {}
+curvature:
+  Index2: 0.6667
+  free_Index2: false
+data:
+  cacheft1: true
+  evfile: /Users/autobreaux/1E_1048_GammaRayOutburst/list.txt
+  ltcube: null
+  scfile: /Users/autobreaux/1E_1048_GammaRayOutburst/spacecraft/L241221204115FBCCA76139_SC00.fits
+extension:
+  fit_ebin: false
+  fit_position: false
+  fix_shape: false
+  free_background: false
+  free_radius: null
+  make_plots: false
+  make_tsmap: true
+  psf_scale_fn: null
+  reoptimize: false
+  save_model_map: false
+  spatial_model: RadialGaussian
+  sqrt_ts_threshold: null
+  tsmap_fitter: tsmap
+  update: false
+  width: []
+  width_max: 1.0
+  width_min: 0.01
+  width_nstep: 21
+  write_fits: true
+  write_npy: true
+fileio:
+  logfile: /Users/autobreaux/1E_1048_GammaRayOutburst/lightcurve_348105602_348278402/fermipy.log
+  outdir: /Users/autobreaux/1E_1048_GammaRayOutburst/lightcurve_348105602_348278402
+  outdir_regex:
+  - \.fits$|\.fit$|\.xml$|\.npy$|\.png$|\.pdf$|\.yaml$
+  savefits: true
+  scratchdir: /scratch
+  usescratch: false
+  workdir: /Users/autobreaux/1E_1048_GammaRayOutburst
+  workdir_regex:
+  - \.fits$|\.fit$|\.xml$|\.npy$
+gtlike:
+  bexpmap: null
+  bexpmap_base: null
+  bexpmap_roi: null
+  bexpmap_roi_base: null
+  convolve: true
+  edisp: true
+  edisp_bins: -2
+  edisp_disable:
+  - isodiff
+  expscale: null
+  irfs: P8R3_SOURCE_V3
+  llscan_npts: 20
+  minbinsz: 0.05
+  resample: true
+  rfactor: 2
+  src_expscale: {}
+  srcmap: null
+  srcmap_base: null
+  use_external_srcmap: false
+  use_scaled_srcmap: false
+  wmap: null
+lightcurve:
+  binsz: 86400.0
+  free_background: false
+  free_params: []
+  free_radius: null
+  free_sources: []
+  make_plots: false
+  max_free_sources: 5
+  multithread: false
+  nbins: null
+  nthread: null
+  outdir: null
+  save_bin_data: true
+  shape_ts_threshold: 16.0
+  systematic: 0.02
+  time_bins: []
+  use_local_ltcube: true
+  use_scaled_srcmap: false
+  write_fits: true
+  write_npy: true
+localize:
+  dtheta_max: 0.5
+  fix_shape: false
+  free_background: false
+  free_radius: null
+  make_plots: false
+  nstep: 5
+  tsmap_fitter: tsmap
+  update: true
+  write_fits: true
+  write_npy: true
+logging:
+  chatter: 3
+  prefix: 'lightcurve_348105602_348278402 '
+  verbosity: 3
+ltcube:
+  binsz: 1.0
+  dcostheta: 0.025
+  phibins: 0
+  use_local_ltcube: true
+mc:
+  seed: null
+model:
+  assoc_xmatch_columns:
+  - 3FGL_Name
+  catalogs:
+  - 4FGL-DR3
+  diffuse: []
+  diffuse_dir:
+  - /Users/autobreaux/1E_1048_GammaRayOutburst
+  diffuse_xml: []
+  extdir: null
+  extract_diffuse: false
+  galdiff:
+  - /Volumes/Seagate/Magnetar_Project/Diffuse/gll_iem_v07.fits
+  isodiff:
+  - /Volumes/Seagate/Magnetar_Project/Diffuse/iso_P8R3_SOURCE_V3_v1.txt
+  limbdiff: []
+  merge_sources: true
+  sources:
+  - Index: 2.0
+    SpatialModel: PointSource
+    SpectrumType: PowerLaw
+    dec: -59.89
+    name: 1E 1048.1-5937
+    ra: 162.53
+  src_radius: null
+  src_radius_roi: null
+  src_roiwidth: 25.0
+optimizer:
+  init_lambda: 0.0001
+  max_iter: 100
+  min_fit_quality: 2
+  optimizer: MINUIT
+  retries: 3
+  tol: 0.001
+  verbosity: 0
+plotting:
+  catalogs: []
+  cmap: magma
+  cmap_resid: RdBu_r
+  figsize:
+  - 8.0
+  - 6.0
+  format: png
+  graticule_radii: []
+  interactive: false
+  label_ts_threshold: 0.0
+  loge_bounds: []
+psmap:
+  chatter: 1
+  cmap: ''
+  dpix: -1
+  emax: 1000000.0
+  emin: 100.0
+  fixedradius: -1.0
+  ipix: -1
+  jpix: -1
+  make_plots: false
+  maxpoissoncount: 100.0
+  mmap: ''
+  nbinloge: 20
+  nbinpdf: 50
+  outfile: ''
+  prob_epsilon: 1.0e-07
+  psfpar0: 4.0
+  psfpar0lst: ''
+  psfpar1: 100.0
+  psfpar2: 0.9
+  psfpar3: 0.1
+  scaleaxis: 20.0
+  wmap: ''
+  write_fits: true
+residmap:
+  exclude: []
+  loge_bounds: []
+  make_plots: false
+  model: {}
+  use_weights: false
+  write_fits: true
+  write_npy: true
+roiopt:
+  max_free_sources: 5
+  npred_frac: 0.95
+  npred_threshold: 1.0
+  shape_ts_threshold: 25.0
+  skip: []
+sed:
+  bin_index: 2.0
+  cov_scale: 3.0
+  free_background: false
+  free_pars: []
+  free_radius: null
+  make_plots: false
+  ul_confidence: 0.95
+  ul_ts_threshold: 4.0
+  use_local_index: false
+  write_fits: true
+  write_npy: true
+selection:
+  convtype: null
+  dec: -59.89
+  emax: 300000.0
+  emin: 100.0
+  evclass: 128
+  evtype: 3
+  filter: null
+  glat: null
+  glon: null
+  logemax: null
+  logemin: null
+  phasemax: null
+  phasemin: null
+  ra: 162.53
+  radius: null
+  roicut: 'no'
+  target: null
+  tmax: 348278402.0
+  tmin: 348105602.0
+  zmax: 90.0
+sourcefind:
+  free_params: []
+  max_iter: 5
+  min_separation: 1.0
+  model: {}
+  multithread: false
+  nthread: null
+  sources_per_iter: 4
+  sqrt_ts_threshold: 5.0
+  tsmap_fitter: tsmap
+tscube:
+  cov_scale: -1.0
+  cov_scale_bb: -1.0
+  do_sed: true
+  exclude: []
+  init_lambda: 0.0
+  max_iter: 30
+  model: {}
+  nnorm: 10
+  norm_sigma: 5.0
+  remake_test_source: false
+  st_scan_level: 0
+  tol: 0.001
+  tol_type: 0
+tsmap:
+  exclude: []
+  loge_bounds: []
+  make_plots: false
+  max_kernel_radius: 3.0
+  model: {}
+  multithread: false
+  nthread: null
+  write_fits: true
+  write_npy: true
